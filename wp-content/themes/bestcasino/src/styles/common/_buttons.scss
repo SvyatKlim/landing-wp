@@ -1,0 +1,22 @@
+.btn {
+  border: 1px solid $dark-grey;
+  color: $white;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  align-items: center;
+  width: fit-content;
+  padding: 22px 16px;
+  display: flex;
+  justify-content: center;
+
+  &-wrapper {
+    position: relative;
+    display: flex;
+    width: fit-content;
+    padding-bottom: 20px;
+  }
+}
