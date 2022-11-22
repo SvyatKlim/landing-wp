@@ -12,9 +12,4 @@ function debug_dump($data, $die = false, $dump = true)
     if ($die) wp_die();
 }
 
-function get_image_alt($url){
-$fileParts = pathinfo($url);
-return  $fileParts ['filename'];
-}
-
 
