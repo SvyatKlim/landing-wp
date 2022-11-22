@@ -1,8 +1,7 @@
-const dropdown = (drop = '.js-dropdown', onChange, dropBtn = '.js-dropdown-btn', dropList = '.js-dropdown-list') => {
+const dropdown = (drop = '.js-dropdown', dropBtn = '.js-dropdown-btn', dropList = '.js-dropdown-list') => {
     $(drop).each((i, el) => {
         let btn = $(el).find(dropBtn),
-            list = $(el).find(dropList),
-            items = $(list).find('li');
+            list = $(el).find(dropList);
 
 
         $(btn).on('click', () => {
@@ -16,28 +15,6 @@ const dropdown = (drop = '.js-dropdown', onChange, dropBtn = '.js-dropdown-btn',
                 $(list).slideUp().removeClass('open');
             }
         })
-
-
-        $(items).on('click', (ev) => {
-            let target = $(ev.currentTarget);
-
-            $(items).each((i, item) => {
-                if ($(item).is(target)) {
-                    if (!$(item).hasClass('active')) {
-                        $(item).addClass('active');
-                        $(btn).text($(target).text());
-                        if (onChange) {
-                            onChange(ev);
-                        }
-                    }
-                } else {
-                    $(item).removeClass('active');
-                }
-            });
-
-            $(list).slideUp().removeClass('open');
-        })
-
 
     })
 }

@@ -110,3 +110,23 @@ add_filter('wpcf7_autop_or_not', '__return_false');
 @ini_set('upload_max_size', '120M');
 @ini_set('post_max_size', '120M');
 @ini_set('max_execution_time', '300');
+
+
+if( function_exists('acf_add_options_page') ) {
+
+    acf_add_options_page(array(
+        'page_title' => 'Casino Options',
+        'menu_title' => 'Casino Options',
+        'menu_slug' => 'theme-general-settings',
+        'redirect' => false,
+        'parent_slug' => 'edit.php?post_type=casino',
+    ));
+
+    acf_add_options_page(array(
+        'page_title' => 'Theme Options',
+        'menu_title' => 'Theme Options',
+        'menu_slug' => 'theme-options',
+        'redirect' => false,
+        'parent_slug' => false
+    ));
+}

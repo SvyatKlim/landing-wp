@@ -146,7 +146,7 @@ class Footer_Walker extends Walker_Nav_Menu {
                 . $args->after;
         } else {
             $item_output = $args->before
-                . '<span class="footer__nav__link" ' . '>'
+                . '<span class="footer__nav__text h4" ' . '>'
                 . $title
                 .'</span>'
                 . $args->after;

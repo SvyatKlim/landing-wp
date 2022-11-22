@@ -3,12 +3,16 @@
 @import './common/general';
 @import './common/typography';
 @import './common/buttons';
+@import './common/forms';
 
 @import './components/header';
 @import './components/intro';
 @import './components/top-list';
 @import './components/tab';
 @import './components/tag';
+@import './components/benefits';
+
+@import './components/footer';
 
 // Rewrite plugin styles - KK Star ratings
 @import './components/star-ratings-extend';
