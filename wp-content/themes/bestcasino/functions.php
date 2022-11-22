@@ -80,7 +80,7 @@ function st_scripts()
     wp_enqueue_script('main-js');
 }
 
-add_action('wp_enqueue_scripts', 'pdst_scripts');
+add_action('wp_enqueue_scripts', 'st_scripts');
 
 //Customize language switcher
 

@@ -6,16 +6,16 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * 
+ *
  */
-
 ?>
 
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <?php wp_head(); ?>
 </head>
@@ -24,7 +24,12 @@
     <header class="header">
         <div class="header__container">
             <div class="header__logo">
-                <?php the_custom_logo(); ?>
+                <?php
+                if (get_custom_logo()) {
+                    the_custom_logo();
+                } else {?>
+                    <p class="header__logo__text"><?php echo get_bloginfo(); ?></p>
+                <?php } ?>
             </div>
 
             <div class="header__burger js-nav-btn">
@@ -33,7 +38,6 @@
                     <span></span>
                     <span></span>
                 </div>
-                <p class="nav-link"><?php _e('МЕНЮ', 'psec'); ?></p>
             </div>
 
             <nav class="header__nav js-nav">

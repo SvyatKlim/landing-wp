@@ -36,6 +36,7 @@ class Header_Walker extends Walker_Nav_Menu {
     }
 
     function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+            $classes = $item->classes;
             $classes[]= 'item-' . $item->menu_order;
             if($item->menu_item_parent == 0){
                 array_push($classes,"header__nav__item");

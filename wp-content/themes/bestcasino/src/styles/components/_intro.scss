@@ -1,0 +1,24 @@
+.intro {
+  &__left {
+    width: 50%;
+    max-width: 580px;
+
+    &__text {
+      margin-bottom: 35px;
+    }
+  }
+
+  &__right {
+    width: 50%;
+    display: flex;
+    justify-content: right;
+    &__image {
+      max-width: 510px;
+      max-height: 300px;
+    }
+  }
+
+  &__tags {
+    margin-top: 24px;
+  }
+}
