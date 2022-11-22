@@ -1,0 +1,110 @@
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+  padding: 35px;
+  display: flex;
+  justify-content: center;
+  color: $white;
+
+  &.header-fixed {
+    background-color: $violet;
+    padding: 20px;
+
+    .custom-logo-link {
+      img {
+        width: 80%;
+      }
+    }
+  }
+
+  &__container {
+    max-width: 1220px;
+    padding: 0 35px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    &__text {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+  }
+
+  &__nav {
+    width: 73.6%;
+    max-width: 895px;
+    margin-left: 40px;
+
+    &__list {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 -10px;
+    }
+    &__item{
+      margin: 0 10px;
+      &:last-child{
+        margin-right: 0;
+      }
+      .btn{
+        padding: 14px 16px;
+      }
+      &--dropdown{
+        position: relative;
+        padding-right: 20px;
+        &:after{
+          content: "";
+          display: block;
+          position: absolute;
+          top: 5px;
+          right: 0;
+          width: 6px;
+          height: 6px;
+          border-style: solid;
+          border-color: #fff;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+          transition: border-width 150ms ease-in-out;
+        }
+      }
+    }
+
+    &__sub {
+      visibility: hidden;
+      position: absolute;
+      opacity: 0;
+      will-change: opacity, transform;
+      padding: 35px 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 1460px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      bottom: -84px;
+      transition: box-shadow 0.3s ease;
+
+      .nav-link {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.1;
+        transition: color 0.3s linear;
+        @media (hover: hover) {
+          &:hover {
+            color: rgba($white, 0.6);
+          }
+        }
+      }
+    }
+  }
+
+}

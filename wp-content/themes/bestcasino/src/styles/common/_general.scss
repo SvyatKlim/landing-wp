@@ -10,11 +10,11 @@ html {
 
 body, html {
   position: relative;
-  background-color: $black;
+  background-color: $white;
   width: 100%;
   font-family: $montserrat;
   font-size: 14px;
-  color: $white;
+  color: $black;
   font-weight: 400;
   line-height: 1.75;
   overflow-x: hidden;
@@ -107,9 +107,9 @@ section {
 }
 
 .container {
-  max-width: 1460px;
-  padding-left: 30px;
-  padding-right: 30px;
+  max-width: 1220px;
+  padding-left: 35px;
+  padding-right: 35px;
   width: 100%;
   display: flex;
   margin: 0 auto;
@@ -139,17 +139,18 @@ section {
 
 .pt {
   &-after-header {
-    padding-top: 145px;
-
-    &.soft-intro {
-      padding-top: 175px;
-    }
+    padding-top: 130px;
   }
 
   &-0 {
     padding-top: 0;
   }
-
+  &-30 {
+    padding-top: 30px;
+  }
+  &-60 {
+    padding-top: 30px;
+  }
   &-60 {
     padding-top: 60px;
   }
@@ -162,27 +163,11 @@ section {
     padding-top: 100px;
   }
 
-  &-140 {
-    padding-top: 140px;
-  }
-
-  &-160 {
-    padding-top: 160px;
-  }
-
-  &-180 {
-    padding-top: 180px;
-  }
-
-  &-200 {
-    padding-top: 200px;
-  }
-
-  &-260 {
-    padding-top: 260px;
-  }
 
   @media screen and (max-width: 767px) {
+    &-30 {
+      padding-top: 15px;
+    }
     &-60 {
       padding-top: 40px;
     }
@@ -191,18 +176,11 @@ section {
       padding-top: 60px;
     }
 
-    &-100, &-140, &-200 {
+    &-100 {
       padding-top: 60px;
-    }
-    &-160, &-180, &-200, &-260 {
-      padding-top: 80px;
     }
     &-after-header {
       padding-top: 110px;
-
-      &.soft-intro {
-        padding-top: 105px;
-      }
     }
   }
 }
@@ -211,6 +189,9 @@ section {
 .pb {
   &-0 {
     padding-bottom: 0;
+  }
+  &-30{
+    padding-bottom: 30px;
   }
 
   &-60 {
@@ -225,50 +206,16 @@ section {
     padding-bottom: 100px;
   }
 
-  &-140 {
-    padding-bottom: 140px;
-  }
-
-  &-160 {
-    padding-bottom: 160px;
-  }
-
-  &-180 {
-    padding-bottom: 180px;
-  }
-
-  &-200 {
-    padding-bottom: 200px;
-  }
-
-  &-220 {
-    padding-bottom: 220px;
-  }
-
-  &-240 {
-    padding-bottom: 240px;
-  }
-
-  &-260 {
-    padding-bottom: 260px;
-  }
-
-
   @media screen and (max-width: 767px) {
+    &-30{
+      padding-bottom: 15px;
+    }
     &-60, &-80 {
       padding-bottom: 40px;
     }
 
-    &-100, &-140 {
+    &-100{
       padding-bottom: 60px;
-    }
-
-    &-160, &-180 {
-      padding-bottom: 80px;
-    }
-
-    &-200, &-220, &-240, &-260 {
-      padding-bottom: 80px;
     }
   }
 }
@@ -284,8 +231,12 @@ section {
   text-align: center;
 }
 
-.white_bg {
+.white-bg {
   background-color: $white;
+}
+.violet-bg{
+  background-color: $violet;
+  color: $white;
 }
 
 svg {
@@ -294,6 +245,22 @@ svg {
   }
 }
 
+.tag{
+  margin-right: 20px;
+  padding: 7px 14px ;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  border: 1px solid $white;
+  border-radius: 25px;
+  &:last-child{
+    margin-right: 0;
+  }
+  &__wrapper{
+    display: flex;
+    align-items: center;
+  }
+}
 @media screen and (max-width: 768px) {
   .container {
     padding-left: 24px;

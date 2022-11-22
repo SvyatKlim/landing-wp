@@ -13,4 +13,6 @@
 
 get_header();
 
+echo get_template_part('template-parts\intro',null, get_field('intro'));
+
 get_footer();
