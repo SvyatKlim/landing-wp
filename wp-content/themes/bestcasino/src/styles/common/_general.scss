@@ -94,7 +94,7 @@ section {
 
   ::-webkit-scrollbar-track {
     border: solid 3px transparent;
-    background: rgba($gray-light, 0.4);
+    background: rgba($gray, 0.4);
     border-radius: 20px;
   }
 
@@ -114,6 +114,9 @@ section {
   margin: 0 auto;
   position: relative;
   z-index: 2;
+  &-small{
+    max-width: 870px;
+  }
 }
 
 .d-flex {
@@ -266,6 +269,19 @@ svg {
     }
   }
 }
+.separator{
+  width: 100%;
+  height: 1px;
+  background-color: $gray;
+  position: relative;
+  z-index: 2;
+}
+.trademark{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 @media screen and (max-width: 768px) {
   .container {
@@ -279,4 +295,8 @@ svg {
     padding-left: 15px;
     padding-right: 15px;
   }
+}
+
+.kksr-stars {
+  pointer-events: none; //Disable star rating select
 }
