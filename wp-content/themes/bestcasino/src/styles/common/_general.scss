@@ -55,19 +55,18 @@ button {
 }
 
 pre {
-  color: white;
+  color: $black;
 
-  .white_bg & {
-    color: $black;
-  }
 }
 
 button, input, optgroup, select, textarea {
   font-size: inherit;
 }
-picture{
+
+picture {
   display: flex;
 }
+
 img {
   object-fit: cover;
   width: 100%;
@@ -145,12 +144,15 @@ section {
   &-0 {
     padding-top: 0;
   }
+
   &-30 {
     padding-top: 30px;
   }
+
   &-60 {
     padding-top: 30px;
   }
+
   &-60 {
     padding-top: 60px;
   }
@@ -190,7 +192,8 @@ section {
   &-0 {
     padding-bottom: 0;
   }
-  &-30{
+
+  &-30 {
     padding-bottom: 30px;
   }
 
@@ -207,14 +210,14 @@ section {
   }
 
   @media screen and (max-width: 767px) {
-    &-30{
+    &-30 {
       padding-bottom: 15px;
     }
     &-60, &-80 {
       padding-bottom: 40px;
     }
 
-    &-100{
+    &-100 {
       padding-bottom: 60px;
     }
   }
@@ -223,6 +226,7 @@ section {
 .no-margin {
   margin: 0;
 }
+
 .mb-0 {
   margin-bottom: 0;
 }
@@ -234,7 +238,8 @@ section {
 .white-bg {
   background-color: $white;
 }
-.violet-bg{
+
+.violet-bg {
   background-color: $violet;
   color: $white;
 }
@@ -245,22 +250,23 @@ svg {
   }
 }
 
-.tag{
-  margin-right: 20px;
-  padding: 7px 14px ;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1;
+.arrow-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  border-radius: 50%;
   border: 1px solid $white;
-  border-radius: 25px;
-  &:last-child{
-    margin-right: 0;
-  }
-  &__wrapper{
-    display: flex;
-    align-items: center;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    path {
+      fill: $white;
+    }
   }
 }
+
 @media screen and (max-width: 768px) {
   .container {
     padding-left: 24px;

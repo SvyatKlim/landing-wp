@@ -7,10 +7,12 @@
   display: flex;
   justify-content: center;
   color: $white;
+  box-shadow: 0 3px 5px rgba(44, 49, 115, 0);
 
   &.header-fixed {
     background-color: $violet;
     padding: 20px;
+    box-shadow: 0 7px 40px rgba(44, 49, 115, 0.9);
 
     .custom-logo-link {
       img {
@@ -48,18 +50,23 @@
       justify-content: space-between;
       margin: 0 -10px;
     }
-    &__item{
+
+    &__item {
       margin: 0 10px;
-      &:last-child{
+
+      &:last-child {
         margin-right: 0;
       }
-      .btn{
+
+      .btn {
         padding: 14px 16px;
       }
-      &--dropdown{
+
+      &--dropdown {
         position: relative;
         padding-right: 20px;
-        &:after{
+
+        &:after {
           content: "";
           display: block;
           position: absolute;

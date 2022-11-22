@@ -17,7 +17,7 @@ $args = wp_parse_args(
             <h1 class="title"><?php echo esc_attr($args['title']); ?></h1>
             <p class="intro__left__text description"><?php echo esc_attr($args['description']); ?></p>
             <?php if (!empty($args['link']['url'])) { ?>
-                <a class="btn btn-<?php echo $args['link_color']; ?>"
+                <a class="btn <?php echo 'btn-' . $args['link_color']; ?>"
                    href="<?php echo esc_url($args['link']['url']); ?>"
                    target="<?php echo $args['link']['target']; ?>">
                     <?php echo esc_attr($args['link']['title']); ?>

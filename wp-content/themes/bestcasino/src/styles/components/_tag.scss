@@ -1,0 +1,27 @@
+.tag {
+  margin-right: 20px;
+  padding: 7px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  border: 1px solid $white;
+  border-radius: 25px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &-increased {
+    margin-right: 0;
+    font-size: 14px;
+    background-color: $violet;
+    border-color: $violet;
+    color: $white;
+    margin-bottom: 5px;
+  }
+}

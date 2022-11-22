@@ -14,5 +14,6 @@
 get_header();
 
 echo get_template_part('template-parts\intro',null, get_field('intro'));
+echo get_template_part('template-parts\top-list');
 
 get_footer();
