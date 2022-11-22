@@ -52,7 +52,7 @@ $top_list_cat = get_terms([
 
                 while ($cat_items->have_posts()) {
                     $cat_items->the_post();
-                    echo get_template_part('template-parts\single-casino', null, [
+                    echo get_template_part('template-parts/single-casino', null, [
                         'index'=> $number
                     ]);
                     $number++;

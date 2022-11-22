@@ -21,15 +21,19 @@
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define( 'DB_NAME', 'landing' );
+//define( 'DB_NAME', 'epiz_33055962_bestcasino' );
 
 /** Database username */
 define( 'DB_USER', 'root' );
+//define( 'DB_USER', 'epiz_33055962' );
 
 /** Database password */
 define( 'DB_PASSWORD', 'root' );
+//define( 'DB_PASSWORD', 'tIunufAZXm' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
+//define( 'DB_HOST', 'sql100.epizy.com' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );

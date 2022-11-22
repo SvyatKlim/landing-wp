@@ -13,9 +13,9 @@
 
 get_header();
 
-echo get_template_part('template-parts\intro', null, get_field('intro'));
-echo get_template_part('template-parts\top-list');
-echo get_template_part('template-parts\benefits-block', null, get_field('content'));
-echo get_template_part('template-parts\booking-block', null, get_field('booking'));
+echo get_template_part('template-parts/intro', null, get_field('intro'));
+echo get_template_part('template-parts/top-list');
+echo get_template_part('template-parts/benefits-block', null, get_field('content'));
+echo get_template_part('template-parts/booking-block', null, get_field('booking'));
 
 get_footer();

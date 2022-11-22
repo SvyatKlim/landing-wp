@@ -31,7 +31,7 @@ function casino_sort() {
 
         while ( $query->have_posts() ) {
             $query->the_post();
-            echo get_template_part('template-parts\single-casino', null, [
+            echo get_template_part('template-parts/single-casino', null, [
                 'index'=> $number
             ]);
             $number++;
