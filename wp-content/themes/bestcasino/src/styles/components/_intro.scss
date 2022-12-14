@@ -21,4 +21,13 @@
   &__tags {
     margin-top: 24px;
   }
+  @media screen and (max-width: 1024px){
+    &__right {
+      &__image{
+        img{
+          object-fit: contain ;
+        }
+      }
+    }
+  }
 }

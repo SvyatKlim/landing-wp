@@ -62,7 +62,7 @@ a {
   text-decoration: none;
 }
 
-a, button,.nav-link {
+a, button, .nav-link {
   font-family: $montserrat;
   font-weight: 600;
   font-size: 14px;
@@ -71,7 +71,8 @@ a, button,.nav-link {
   color: inherit;
   cursor: pointer;
 }
-.btn,button{
+
+.btn, button {
   font-family: $montserrat;
   font-weight: 600;
   font-size: 20px;
@@ -255,9 +256,27 @@ a, button,.nav-link {
   }
 }
 
-@media screen and (max-width: 992px) {
-  h1, h2, {
-    margin-bottom: 40px;
+@media screen and (max-width: 1250px) {
+  .nav-link {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  h1, .h1 {
+    font-size: 30px;
+  }
+  h2, .h2 {
+    font-size: 26px;
+  }
+  h3, .h3 {
+    font-size: 22px;
+  }
+  .h4, h4{
+    font-size: 18px;
+  }
+  .h5, h5{
+    font-size: 14px;
   }
   h3, h4, h5, h6 {
     margin-bottom: 20px;

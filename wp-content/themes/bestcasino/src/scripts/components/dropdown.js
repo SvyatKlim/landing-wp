@@ -1,21 +1,40 @@
 const dropdown = (dropdown = '.js-menu-item', dropList = '.js-sub-menu', btnClass = '.nav-link') => {
-    $(dropdown).each((i, item) => {
-            const btn = $(item).children(btnClass),
-                list = $(item).find(dropList);
-
-        $(document).on('click', (ev) => {
-            let target = $(ev.target);
-
-            if(!$(dropList).hasClass('open') ) {
-                if(target.is(dropdown) || $(dropdown).find(target).length > 0) {
-                    $(dropdown).addClass('open');
-                    $(list).slideDown().addClass('open');
-                }
-            } else if(target.is(btn) || $(dropdown).find(target).length < 1) {
-                $(dropdown).removeClass('open');
-                $(list).slideUp().removeClass('open');
+    function toggleDropDown(ev, btn, list) {
+        let target = $(ev.target);
+console.log(target)
+        if (!$(dropList).hasClass('open')) {
+            if (target.is(dropdown) || $(dropdown).find(target).length > 0) {
+                $(dropdown).addClass('open');
+                $(list).slideDown().addClass('open');
             }
-        })
+        } else if (target.is(btn) || $(dropdown).find(target).length < 1) {
+            $(dropdown).removeClass('open');
+            $(list).slideUp().removeClass('open');
+        }
+    }
+
+    function dropdownInit() {
+        if ($(window).width() > 992) {
+            $(dropdown).each((i, item) => {
+                const btn = $(item).children(btnClass),
+                    list = $(item).find(dropList);
+
+                // $(window).width() > 992 ?
+                    document.body.addEventListener('click',  (ev) => toggleDropDown(ev,btn,list),true)
+                //     :
+                //     window.removeEventListener('click',toggleDropDown)
+            })
+        } else {
+            console.log('else')
+            document.body.removeEventListener('click', toggleDropDown,true)
+        }
+    }
+
+    dropdownInit();
+
+    $(window).on('resize', function () {
+        dropdownInit();
+        console.log('resize', $(window).width())
 
     })
 }

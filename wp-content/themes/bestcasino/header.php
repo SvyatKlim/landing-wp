@@ -41,12 +41,11 @@
             </div>
 
             <nav class="header__nav js-nav">
-
                 <?php
                 $args = array(
                     'walker' => new Header_Walker(),
                     'container' => false,
-                    'menu_class' => 'header__nav__list',
+                    'menu_class' => 'header__nav__list js-nav-list',
                     'theme_location' => 'header-menu',
                     'fallback_cb' => false
                 );
