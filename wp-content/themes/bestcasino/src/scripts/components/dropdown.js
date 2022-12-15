@@ -1,42 +1,60 @@
-const dropdown = (dropdown = '.js-menu-item', dropList = '.js-sub-menu', btnClass = '.nav-link') => {
-    function toggleDropDown(ev, btn, list) {
-        let target = $(ev.target);
-console.log(target)
-        if (!$(dropList).hasClass('open')) {
-            if (target.is(dropdown) || $(dropdown).find(target).length > 0) {
-                $(dropdown).addClass('open');
-                $(list).slideDown().addClass('open');
-            }
-        } else if (target.is(btn) || $(dropdown).find(target).length < 1) {
-            $(dropdown).removeClass('open');
-            $(list).slideUp().removeClass('open');
-        }
+class Dropdown {
+    constructor(dropdown, dropList, btnClass) {
+        this.dropdown = document.querySelector(dropdown);
+        this.dropdownClass = dropdown;
+        this.dropList = dropList;
+        this.btnClass = btnClass;
+        this.overlay = document.querySelector('.js-header-overlay');
+        this.document = document.querySelector('.main-wrapper');
+        this.toggleEvent = this.toggleClass.bind(this);
+        this.initialized = false;
     }
 
-    function dropdownInit() {
-        if ($(window).width() > 992) {
-            $(dropdown).each((i, item) => {
-                const btn = $(item).children(btnClass),
-                    list = $(item).find(dropList);
+    removeClass() {
+        this.overlay.classList.add('close');
+        this.dropdown.classList.remove('open');
+        setTimeout(() => {
+            this.overlay.classList.remove('open');
+        }, 300)
+    }
 
-                // $(window).width() > 992 ?
-                    document.body.addEventListener('click',  (ev) => toggleDropDown(ev,btn,list),true)
-                //     :
-                //     window.removeEventListener('click',toggleDropDown)
-            })
+    openClass() {
+        if (this.overlay.classList.contains('close')) {
+            this.overlay.classList.remove('close');
+        }
+        this.overlay.classList.add('open');
+        this.dropdown.classList.add('open');
+    }
+
+    toggleClass() {
+        if (this.dropdown.classList.contains('open')) {
+            this.removeClass(this.dropdown);
         } else {
-            console.log('else')
-            document.body.removeEventListener('click', toggleDropDown,true)
+            this.openClass(this.dropdown);
         }
     }
 
-    dropdownInit();
+    clickHandler() {
+        this.dropdown.addEventListener('click', this.toggleEvent)
+        this.overlay.addEventListener('click', () => {
+            if (this.overlay.classList.contains('open')) {
+                this.removeClass();
+            }
+        })
+    }
 
-    $(window).on('resize', function () {
-        dropdownInit();
-        console.log('resize', $(window).width())
+    init() {
+        this.clickHandler();
+        this.initialized = true;
+    }
 
-    })
+    destroy() {
+        console.log('destroy')
+        if (this.initialized) {
+            this.dropdown.removeEventListener('click', this.toggleEvent);
+            this.initialized = false;
+        }
+    }
 }
 
-export default dropdown;
+export default Dropdown;

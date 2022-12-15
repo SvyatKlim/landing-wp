@@ -21,6 +21,7 @@
 </head>
 <body <?php body_class(); ?> >
 <div class="main-wrapper">
+    <div class="header-overlay js-header-overlay"></div>
     <header class="header">
         <div class="header__container">
             <div class="header__logo">
