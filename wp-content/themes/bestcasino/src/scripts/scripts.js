@@ -12,7 +12,6 @@ $(document).ready(function () {
         dropdown.init();
     }
     $(window).on('resize', function () {
-        console.log('resize')
         dropdown.destroy()
         if ($(window).width() > 992) {
             dropdown.init()

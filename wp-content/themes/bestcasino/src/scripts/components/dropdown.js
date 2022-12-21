@@ -49,7 +49,6 @@ class Dropdown {
     }
 
     destroy() {
-        console.log('destroy')
         if (this.initialized) {
             this.dropdown.removeEventListener('click', this.toggleEvent);
             this.initialized = false;

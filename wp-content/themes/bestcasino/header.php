@@ -34,11 +34,9 @@
             </div>
 
             <div class="header__burger js-nav-btn">
-                <div class="header__burger__wrapper">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
             </div>
 
             <nav class="header__nav js-nav">

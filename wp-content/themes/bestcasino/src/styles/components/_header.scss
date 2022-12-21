@@ -9,6 +9,7 @@
   color: $white;
   box-shadow: 0 3px 5px rgba(44, 49, 115, 0);
   background-color: $violet;
+
   &.header-fixed {
     background-color: $violet;
     padding: 20px;
@@ -65,7 +66,7 @@
       }
 
       &--dropdown {
-        &> .nav-link {
+        & > .nav-link {
           padding-right: 20px;
           position: relative;
           display: flex;
@@ -88,7 +89,7 @@
         }
 
         &.open {
-          &> .nav-link:after {
+          & > .nav-link:after {
             transform: rotate(225deg);
             right: -4px;
           }
@@ -114,11 +115,13 @@
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
       transition: opacity 0.3s ease, transform 0.2s ease;
       transform: translateY(-20%);
+
       .open & {
         visibility: visible;
         transform: translateY(0);
         opacity: 1;
       }
+
       .nav-link {
         font-weight: 400;
         font-size: 14px;
@@ -161,6 +164,10 @@
     }
   }
   @media screen and (max-width: 992px) {
+    padding: 20px;
+    &__container {
+      padding: 0;
+    }
     &__nav {
       position: absolute;
       left: 0;
@@ -176,6 +183,10 @@
       max-width: unset;
       z-index: 1;
       background-color: $violet;
+      border-radius: 0;
+      transform: translateY(100%) scale(3, 1);
+      opacity: 0;
+      visibility: hidden;
 
       &__list {
         flex-direction: column;
@@ -186,7 +197,13 @@
         margin: 0 0 30px;
 
         &--dropdown {
-          padding-right: 15px;
+          & > .nav-link {
+            padding-right: 0;
+
+            &::after {
+              content: none;
+            }
+          }
         }
 
         &:last-child {
@@ -201,22 +218,80 @@
         left: auto;
         right: auto;
         background-color: transparent;
-        padding: 15px 0 0 15px;
+        padding: 15px 0 0 0;
         border: none;
         box-shadow: none;
         display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+      }
 
-        &.open {
+      &__subitem {
+        margin-bottom: 4px;
 
+        &:last-child {
+          margin-bottom: 0;
         }
       }
 
       .nav-link {
         font-size: 18px;
       }
+
+      &.open-menu{
+      }
     }
     &__logo, &__burger {
       z-index: 2;
+    }
+    &__burger {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 24px;
+      height: 19px;
+
+      span {
+        position: absolute;
+        background-color: $white;
+        left: 0;
+        width: 24px;
+        height: 2px;
+        top: 1px;
+        border-radius: 3px;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        opacity 0.55s ease;
+
+        &:nth-child(2) {
+          top: 8px;
+        }
+
+        &:nth-child(3) {
+          top: 15px;
+        }
+      }
+
+      &.active {
+        span {
+          transform: rotate(45deg) translate(5px,6px);
+
+          &:nth-child(2) {
+            opacity: 0;
+            transform: rotate(0deg) scale(0.2, 0.2);
+          }
+
+          &:nth-child(3) {
+            transform: rotate(-45deg) translate(4px,-5px);
+          }
+        }
+      }
+    }
+    .nav-link {
+      width: 100%;
+      justify-content: center;
     }
   }
 }
