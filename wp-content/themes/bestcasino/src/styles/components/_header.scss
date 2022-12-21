@@ -168,31 +168,62 @@
     &__container {
       padding: 0;
     }
-    &__nav {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
+    &__nav-overlay{
+      visibility: hidden;
+      position: fixed;
       bottom: 0;
       width: 100vw;
       height: 100vh;
+      z-index: 1;
+      background-color: $violet;
+      border-radius: 50%;
+      transform: translateY(100%) scale(0);
+      animation-duration: .6s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      will-change: scale,opacity,translateY,border-radius;
+      .menu-up &{
+        animation-name: curtainUp;
+      }
+
+      .menu-down &{
+        animation-name: curtainDown;
+        animation-duration: .9s;
+      }
+    }
+    &__nav {
       display: flex;
       justify-content: center;
       align-items: center;
       margin: 0;
       max-width: unset;
       z-index: 1;
-      background-color: $violet;
-      border-radius: 0;
-      transform: translateY(100%) scale(3, 1);
-      opacity: 0;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 100vh;
       visibility: hidden;
+      opacity: 0;
+      will-change: opacity;
+      animation-duration: .3s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 0.5s;
+      .menu-up &{
+        animation-name: navOpen;
+      }
 
+      .menu-down &{
+        animation-name: navClose;
+        animation-delay: 0s;
+      }
       &__list {
         flex-direction: column;
         margin: 0;
       }
-
       &__item {
         margin: 0 0 30px;
 
@@ -237,9 +268,6 @@
 
       .nav-link {
         font-size: 18px;
-      }
-
-      &.open-menu{
       }
     }
     &__logo, &__burger {
@@ -334,6 +362,35 @@
   }
   100% {
     transform: translateY(100%) scale(0);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes navOpen {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  10% {
+    visibility: visible;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes navClose {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  100% {
     opacity: 0;
     visibility: hidden;
   }

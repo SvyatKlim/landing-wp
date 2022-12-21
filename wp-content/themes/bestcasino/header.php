@@ -23,7 +23,7 @@
 <div class="main-wrapper">
     <div class="header-overlay js-header-overlay"></div>
     <header class="header">
-        <div class="header__container">
+        <div class="header__container js-header-wrapper">
             <div class="header__logo">
                 <?php
                 if (get_custom_logo()) {
@@ -32,13 +32,12 @@
                     <p class="header__logo__text"><?php echo get_bloginfo(); ?></p>
                 <?php } ?>
             </div>
-
             <div class="header__burger js-nav-btn">
                     <span></span>
                     <span></span>
                     <span></span>
             </div>
-
+            <div class="header__nav-overlay"></div>
             <nav class="header__nav js-nav">
                 <?php
                 $args = array(

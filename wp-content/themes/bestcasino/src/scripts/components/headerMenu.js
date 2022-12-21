@@ -1,18 +1,8 @@
 const headerMenu = () => {
     const header = $('header'),
         navBtn= $('.js-nav-btn'),
-        state = false,
-        navWrapper = $('.js-nav');
+        navWrapper = $('.js-header-wrapper');
 
-    function menuOpen() {
-        navWrapper.classList.remove('menu-down')
-        navWrapper.classList.add('menu-up')
-    }
-
-    function menuClose() {
-        navWrapper.classList.remove('menu-up')
-        navWrapper.classList.add('menu-down')
-    }
     function open() {
         header.addClass('open-menu');
         navBtn.addClass('active');
