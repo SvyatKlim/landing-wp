@@ -25,4 +25,17 @@
       margin-right: 0;
     }
   }
+  @media screen and (max-width: 576px) {
+    &__items{
+      &__inner{
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    &__item{
+      width: auto;
+      display: flex;
+      justify-content: center;
+    }
+  }
 }

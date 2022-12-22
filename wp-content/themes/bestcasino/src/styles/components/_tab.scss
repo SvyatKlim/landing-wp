@@ -36,4 +36,23 @@
       color: $white;
     }
   }
+
+  @media screen and (max-width: 1250px) {
+    margin-right: 10px;
+    &-link {
+      font-size: 12px;
+
+      &__img {
+        max-width: 18px;
+        max-height: 18px;
+        margin-left: 8px;
+      }
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 10px;
+    min-width: 20%;
+    display: flex;
+    justify-content: center;
+  }
 }
