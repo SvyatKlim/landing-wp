@@ -1,0 +1,9 @@
+.kk-star-ratings{
+  flex-direction: column;
+  .kksr-legend {
+    order: 1;
+  }
+  .kksr-stars{
+    order: 2;
+  }
+}
