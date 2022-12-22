@@ -13,7 +13,7 @@ Debug output
 ```$type``` – can be dump or print (var_dump and print_r respectively)
 
 ```PHP
-pdst_debug_dump( $data, $die = false, $dump = true);
+debug_dump( $data, $die = false, $dump = true);
 ```
 #In this project I use:
 -  Node JS - v16.16.0
